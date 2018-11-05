@@ -20,7 +20,7 @@ public class TestScheduledThreadPool {
 
         ((ScheduledThreadPoolExecutor) scheduledThreadPool).schedule(() ->{
             System.out.println("当前运行的线程名称是：" + Thread.currentThread().getName());
-        },0L, TimeUnit.MILLISECONDS);
+        },1L, TimeUnit.MILLISECONDS);
         scheduledThreadPool.shutdown();
     }
 }
