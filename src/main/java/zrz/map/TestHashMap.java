@@ -27,7 +27,7 @@ public class TestHashMap {
             @Override
             public void run() {
                 map.put("two", 2);
-                System.out.println("map忠加入"  + 2);
+                System.out.println("map中加入"  + 2);
             }
         }).start();
 
