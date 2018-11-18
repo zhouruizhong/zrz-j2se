@@ -1,4 +1,4 @@
-package zrz.design.pattern.singleton;
+package zrz.pattern.singleton;
 
 /**
  * @author 唐朝
