@@ -16,7 +16,7 @@ import java.util.Set;
 public class RedisKey {
 
     private static synchronized Jedis getJedis (){
-        return new Jedis("192.168.1.88", 6579);
+        return new Jedis("127.0.0.1", 6379);
     }
 
     /**
@@ -155,7 +155,12 @@ public class RedisKey {
         Set<String> set = keys();
         set.forEach(System.out::println);
 
-        long d = del("runoobkey");
-        System.out.println(d);
+        System.out.println("name 是否存在：" + exists("name"));
+        System.out.println(expire("name", 3));
+
+        System.out.println(type("list"));
+
+        //long d = del("runoobkey");
+        // System.out.println(d);
     }
 }

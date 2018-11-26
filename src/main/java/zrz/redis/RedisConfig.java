@@ -5,4 +5,5 @@ package zrz.redis;
  * @date 2018/11/26 17:32
  */
 public class RedisConfig {
+
 }
