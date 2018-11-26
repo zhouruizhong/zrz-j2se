@@ -1,5 +1,7 @@
 package zrz.sort;
 
+import java.util.Arrays;
+
 /**
  * @author zhouruizhong
  * @title: BubbleSort
@@ -31,6 +33,25 @@ public class BubbleSort {
                 }
             }
         }
+    }
+
+    public static void printArr(int [] numbers){
+        for (int i: numbers ) {
+            System.out.print(i + ",");
+        }
+        System.out.println("");
+    }
+
+    public static void main(String[] args) {
+        int [] numbers = {56,84,24,95,31,57,64,21,85,46};
+
+        System.out.print("没有排序前：");
+        printArr(numbers);
+
+        bubbleSort(numbers);
+        System.out.print("冒泡排序后：");
+        printArr(numbers);
+
     }
 
 }

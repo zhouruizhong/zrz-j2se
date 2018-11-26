@@ -38,10 +38,9 @@ public class TestHashMap {
 
     public static void main(String[] args) throws InterruptedException {
 
-        Map<String, Object> map = new HashMap<>(16);
+        Map<String, Object> map = new HashMap<String, Object>(16);
 
         new Thread(new Runnable() {
-            @Override
             public void run() {
                 System.out.println("map中加入"  + 2);
             }
@@ -49,14 +48,12 @@ public class TestHashMap {
 
 
         new Thread(new Runnable() {
-            @Override
             public void run() {
                 System.out.println("map中加入"  + 2);
             }
         }).start();
 
         new Thread(new Runnable() {
-            @Override
             public void run() {
                 System.out.println("map中加入"  + 3);
             }
