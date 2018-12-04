@@ -138,6 +138,12 @@
         </dependency>
         <!-- redis cache related.....end -->
 
+        <dependency>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>zookeeper</artifactId>
+            <version>3.4.8</version>
+        </dependency>
+
     </dependencies>
 
     <!-- 指定Maven分发构件的位置 -->
