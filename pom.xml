@@ -33,6 +33,11 @@
             <version>${spring.version}</version>
         </dependency>
         <dependency>
+            <groupId>aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.5.4</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
             <version>${spring.version}</version>
@@ -137,6 +142,12 @@
             <version>${redis-clients.version}</version>
         </dependency>
         <!-- redis cache related.....end -->
+
+        <dependency>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>zookeeper</artifactId>
+            <version>3.4.8</version>
+        </dependency>
 
     </dependencies>
 
