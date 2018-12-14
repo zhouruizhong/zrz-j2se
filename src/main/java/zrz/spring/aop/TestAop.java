@@ -12,8 +12,8 @@ public class TestAop {
     public static void main(String[] args) {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
         MyAop myAop = applicationContext.getBean("myAop", MyAop.class);
-        myAop.m1();
+        //myAop.m1();
         myAop.m2();
-        myAop.m3();
+        //myAop.m3();
     }
 }

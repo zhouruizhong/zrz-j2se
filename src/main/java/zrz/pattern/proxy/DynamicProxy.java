@@ -15,6 +15,9 @@ public class DynamicProxy {
      * 商品接口
      */
     static interface Goods {
+        /**
+         * 交易
+         */
         public void trade();
     }
 
@@ -31,13 +34,13 @@ public class DynamicProxy {
     /**
      * 商品处理类
      */
-    static class GoodsHander implements InvocationHandler {
+    static class GoodsHandler implements InvocationHandler {
         /**
          * 要代理的对象，这里为商品
          */
         private Object object;
 
-        public GoodsHander(Object object) {
+        public GoodsHandler(Object object) {
             this.object = object;
         }
 
@@ -53,12 +56,12 @@ public class DynamicProxy {
 
     public static void main(String[] args) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
         // GoodHander类和ChangJia打交道
-        GoodsHander goodsHander = new GoodsHander(new ChangJia());
+        GoodsHandler goodsHandler = new GoodsHandler(new ChangJia());
         // 先动态生成代理类，再生成代理类的对象
 //        Class proxyClass = Proxy.getProxyClass(Goods.class.getClassLoader(),Goods.class.getInterfaces());
 //        Goods proxy = (Goods) proxyClass.getConstructor(GoodsHander.class).newInstance(goodsHander);
         // 动态生成的代理对象，一步到位
-        Goods proxy = (Goods) Proxy.newProxyInstance(Goods.class.getClassLoader(), Goods.class.getInterfaces(), goodsHander);
+        Goods proxy = (Goods) Proxy.newProxyInstance(Goods.class.getClassLoader(), Goods.class.getInterfaces(), goodsHandler);
         proxy.trade(); // 执行的是GoodsHander中的 invoke() 方法，然后是ChangJia中的 trade() 方法
     }
 
